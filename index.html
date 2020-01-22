@@ -1,0 +1,67 @@
+<!DOCTYPE HTML>
+<html lang='pt-BR'>
+  <head>
+    <meta charset="UTF-8">
+    <title>Listas de Afazeres</title>
+    <meta 
+      name="description"
+      content="Uma simples lista de afazeres em HTML, CSS e JavaScript"
+    />
+    <link href="./src/css/styles.css" rel="stylesheet" type="text/css">
+  </head>
+
+  <body>
+    <div id="app">
+
+      <aside>
+        <form onsubmit="">
+          <strong>Adicionar Tarefa</strong>
+
+          <div class="input-block">
+            <label for="todo">Tarefa</label>
+            <input name="todo" id="todo" type="text" required/>
+          </div>
+
+          <div class="input-block">
+            <label for="time">Horário</label>
+            <input name="time" id="time" type="time" required/>
+          </div>
+
+          <button type="submit">Salvar</button>
+        </form>    
+      </aside>
+
+      <main>
+        <ul>
+          
+          <li class="task">
+            <div class="task-info">
+            <strong>Levar o cachorro para passear</strong>
+            <span>10:15</span>
+            </div>
+            <button>X</button>
+          </li>
+
+          <li class="task">
+            <div class="task-info">
+            <strong>Preparar o Almoço</strong>
+            <span>11:20</span>
+            </div>
+            <button>X</button>
+          </li>
+
+          <li class="task">
+            <div class="task-info">
+            <strong>Estudar para a prova</strong>
+            <span>16:00</span>
+            </div>
+            <button>X</button>
+          </li>
+
+        </ul>
+      </main> 
+    </div>
+    <script src="./src/js/todos.js"></script>
+  </body>
+
+</html>

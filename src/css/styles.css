@@ -1,0 +1,140 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap');
+
+*{
+  margin:  0;
+  padding: 0;
+  outline: 0;
+  border:  0;
+  box-sizing: border-box;
+}
+
+html, body, #root{
+  height: 100%;
+
+  --color-1: #FEFFFF;
+  --color-2: #DEF2F1;
+  --color-3: #3AAFA9;
+  --color-4: #2B7A78;
+  --color-5: #17252A;
+}
+
+body {
+  background: var(--color-2);
+  -webkit-font-smoothing: antialiased;
+}
+
+body, input, button {
+  font-family: Roboto, sans-serif;
+}
+
+#app{
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 60px 30px;
+
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+}
+
+/*-----------------SIDE BAR------------------*/
+
+aside{
+  width: 320px;
+  background: var(--color-1);
+  box-shadow: 0 0 14px 0 rgba(0, 0, 0, 0.02);
+  border-radius: 10px;
+  padding: 20px 20px;
+}
+
+aside strong{
+  font-size: 20px;
+  text-align: center;
+  display: block;
+  color: var(--color-5);
+}
+
+aside form{
+  margin-top: 10px;
+}
+
+aside form .input-block{
+  margin-top: 20px;
+}
+
+aside form .input-block label{
+  color: var(--color-4);;
+  font-size: 14px;
+  font-weight: bold;
+  display: block;
+}
+
+aside form .input-block input{
+  width: 100%;
+  height: 32px;
+  font-size: 14px;
+  color: var(--color-4);;
+  border: 0;
+  border-bottom: 1px solid var(--color-2);;
+}
+
+aside form button[type=submit]{
+  width: 100%;
+  border: 0;
+  margin-top: 30px;
+  background: var(--color-3);
+  border-radius: 10px;
+  padding: 15px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  color: var(--color-1);
+  cursor: pointer;
+  transition: background 0.35s;
+}
+
+aside form button[type=submit]:hover {
+  background: var(--color-4)
+}
+
+/*-----------------TASKS------------------*/
+
+main{
+  flex: 1;
+  margin-left: 30px;
+}
+
+main ul{
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+  list-style: none;
+}
+
+li.task{
+  display: grid;
+  grid-template-columns: 17fr 2.5em;
+  background: #FFF;
+  box-shadow: 0 0 14px 0 rgba(0, 0, 0, 0.02);
+  border-radius: 10px;
+  padding: 20px;
+
+}
+
+.task-info{
+  display: grid;
+  grid-template-columns: 17fr 4em;
+}
+
+li button{
+  background: var(--color-4);
+  color: var(--color-1);
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+
+li button:hover{
+  background: var(--color-5);
+}

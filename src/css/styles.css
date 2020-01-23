@@ -39,93 +39,100 @@ body, input, button {
 
 /*-----------------SIDE BAR------------------*/
 
-aside{
-  width: 320px;
+#app aside{
+  width: 315px;
   background: var(--color-1);
-  box-shadow: 0 0 14px 0 rgba(0, 0, 0, 0.02);
-  border-radius: 10px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  border-radius: 4px;
   padding: 20px 20px;
 }
 
-aside strong{
-  font-size: 20px;
+#app aside strong{
+  font-size: 1.4rem;
   text-align: center;
   display: block;
   color: var(--color-5);
 }
 
-aside form{
+#app aside form{
   margin-top: 10px;
 }
 
-aside form .input-block{
-  margin-top: 20px;
+#app aside form .input-block{
+  margin-top: 30px;
 }
 
-aside form .input-block label{
+#app aside form .input-block label{
   color: var(--color-4);;
-  font-size: 14px;
+  font-size: 1rem;
   font-weight: bold;
   display: block;
 }
 
-aside form .input-block input{
+#app aside form .input-block input{
   width: 100%;
-  height: 32px;
-  font-size: 14px;
+  height: 2rem;
+  font-size: 1rem;
   color: var(--color-4);;
   border: 0;
   border-bottom: 1px solid var(--color-2);;
 }
 
-aside form button[type=submit]{
+#app aside form button[type=submit]{
   width: 100%;
   border: 0;
   margin-top: 30px;
   background: var(--color-3);
-  border-radius: 10px;
+  border-radius: 4px;
   padding: 15px 20px;
-  font-size: 16px;
+  font-size: 1.1rem;
   font-weight: bold;
   color: var(--color-1);
   cursor: pointer;
   transition: background 0.35s;
 }
 
-aside form button[type=submit]:hover {
+#app aside form button[type=submit]:hover {
   background: var(--color-4)
 }
 
 /*-----------------TASKS------------------*/
 
-main{
+#list{
   flex: 1;
   margin-left: 30px;
 }
 
-main ul{
+#list ul{
   display: grid;
   grid-template-columns: 1fr;
   gap: 20px;
   list-style: none;
 }
 
-li.task{
+#list li.task{
   display: grid;
-  grid-template-columns: 17fr 2.5em;
+  grid-template-columns: 1fr 2.5rem;
   background: #FFF;
-  box-shadow: 0 0 14px 0 rgba(0, 0, 0, 0.02);
-  border-radius: 10px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  border-radius: 4px;
   padding: 20px;
+  transition: all 0.25s ease-in-out;
+}
+
+#list li.task:hover{
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
 
 }
 
-.task-info{
+
+
+#list .task-info{
   display: grid;
   grid-template-columns: 17fr 4em;
 }
 
-li button{
+#list li button{
   background: var(--color-4);
   color: var(--color-1);
   border-radius: 10px;
@@ -135,6 +142,25 @@ li button{
 }
 
 
-li button:hover{
+#list li button:hover{
   background: var(--color-5);
+}
+
+@media (max-width: 1000px){
+  #app{
+      flex-direction: column;
+      align-items: center;
+      padding: 40px 50px;
+  }
+
+  #list{
+      width: 100%;
+      margin-left: 0;
+      margin-top: 30px;
+  }
+
+  #app aside{
+      width: 100%;
+      max-width: 400px;
+  }
 }

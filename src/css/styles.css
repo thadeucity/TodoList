@@ -16,6 +16,12 @@ html, body, #root{
   --color-3: #3AAFA9;
   --color-4: #2B7A78;
   --color-5: #17252A;
+
+  --item-shadow-1: 0 1px 3px rgba(0, 0, 0, 0.12),
+    0 1px 2px rgba(0, 0, 0, 0.24);
+
+  --item-shadow-2: 0 3px 6px rgba(0, 0, 0, 0.16),
+    0 3px 6px rgba(0, 0, 0, 0.23);
 }
 
 body {
@@ -32,17 +38,18 @@ body, input, button {
   margin: 0 auto;
   padding: 60px 30px;
 
-  display: flex;
-  flex-direction: row;
-  align-items: flex-start;
+  display: grid;
+  grid-template-columns: 315px 1fr;
+  grid-template-areas: "task-add task-list";
+  gap: 30px;
 }
 
 /*-----------------SIDE BAR------------------*/
 
 #app aside{
-  width: 315px;
+  grid-area: task-add;
   background: var(--color-1);
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  box-shadow: var(--item-shadow-1);
   border-radius: 4px;
   padding: 20px 20px;
 }
@@ -99,8 +106,7 @@ body, input, button {
 /*-----------------TASKS------------------*/
 
 #list{
-  flex: 1;
-  margin-left: 30px;
+  grid-area: task-list;
 }
 
 #list ul{
@@ -110,37 +116,38 @@ body, input, button {
   list-style: none;
 }
 
-#list li.task{
-  display: flex;
-  background: #FFF;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+.task{
+  display: grid;
+  grid-template-columns: 1fr 55px 35px;
+  grid-template-areas: "task-title task-time task-delete";
+  background: var(--color-1);
+  box-shadow: var(--item-shadow-1);
   border-radius: 4px;
   padding: 20px;
+  font-size: 1rem;
   transition: all 0.25s ease-in-out;
 }
 
 .task:hover{
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  box-shadow: var(--item-shadow-2);
 }
 
 .task strong{
-  flex: 1;
+  grid-area: task-title;
 }
 
 .task span{
-  width: 55px;
+  grid-area: task-time;
 }
 
 .task button{
+  grid-area: task-delete;
   background: var(--color-4);
   color: var(--color-1);
-  width: 35px;
   border-radius: 10px;
   cursor: pointer;
-  font-size: 12px;
   font-weight: bold;
 }
-
 
 .task button:hover{
   background: var(--color-5);
@@ -148,19 +155,17 @@ body, input, button {
 
 @media (max-width: 1000px){
   #app{
-      flex-direction: column;
-      align-items: center;
-      padding: 40px 50px;
-  }
-
-  #list{
-      width: 100%;
-      margin-left: 0;
-      margin-top: 30px;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "task-add"
+      "task-list";
+    padding: 40px 50px;
   }
 
   #app aside{
-      width: 100%;
-      max-width: 400px;
+    width: 100%;
+    max-width: 400px;
+    margin: auto;
   }
 }
